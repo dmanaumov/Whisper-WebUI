@@ -7,3 +7,15 @@ __pycache__
 venv
 node_modules
 *.log
+
+.git
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.md
+.env
+.dockerignore
+Dockerfile
+tests/
