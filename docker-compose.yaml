@@ -8,12 +8,22 @@ services:
     ports:
       - "7860:7860"
     labels:
-      - "traefik.enable=true"
+      # Роутер для первого домена
       - "traefik.http.routers.whisper-ui.rule=Host(`whisper-ui.teastymenu.ru`)"
       - "traefik.http.routers.whisper-ui.entrypoints=websecure"
       - "traefik.http.routers.whisper-ui.tls=true"
       - "traefik.http.routers.whisper-ui.tls.certresolver=myresolver"
       - "traefik.http.services.whisper-ui.loadbalancer.server.port=7860"
+    
+      # Роутер для второго домена
+      - "traefik.http.routers.whisperwebui.rule=Host(`automation-whisperwebui-6x7dlh-073e7b-217-11-166-159.traefik.me`)"
+      - "traefik.http.routers.whisperwebui.entrypoints=websecure"
+      - "traefik.http.routers.whisperwebui.tls=true"
+      - "traefik.http.routers.whisperwebui.tls.certresolver=myresolver"
+      - "traefik.http.services.whisperwebui.loadbalancer.server.port=7860"
+
+
+      
     networks:
       - traefik
 
