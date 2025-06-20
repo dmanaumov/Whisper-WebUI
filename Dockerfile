@@ -35,4 +35,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Копируем остальной код
 COPY . .
 
-CMD ["python3", "app.py"]
+# CMD ["python3", "app.py"]
+CMD ["python3", "app.py", "--server_name", "0.0.0.0", "--server_port", "7860"]
+
