@@ -1,7 +1,6 @@
 FROM python:3.10-slim
 
-# Устанавливаем
-системные зависимости
+# Устанавливаем системные зависимости
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         ffmpeg \
